@@ -35,7 +35,11 @@ function Intro() {
 
 export default async function Page() {
   const { isEnabled } = draftMode();
-  const allPosts = await getAllPosts(isEnabled);
+  const allPosts = (await getAllPosts(isEnabled)) || [];
+
+  if (allPosts.length === 0) {
+    return <div>No posts available right now.</div>;
+  }
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(0);
 
