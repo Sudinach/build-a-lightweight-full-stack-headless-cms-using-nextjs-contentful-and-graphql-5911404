@@ -4,7 +4,4 @@ node_modules
 npm-debug.log
 
 .env.local
-
-/frontend/.next
-/frontend/.next/
-**/.next/
+.next/
